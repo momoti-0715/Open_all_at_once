@@ -1,0 +1,25 @@
+{
+    "web_open": {
+        "is_open": "True",
+        "browser": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "url_list": [
+            "google.com"
+        ]
+    },
+    "cmd_open": {
+        "is_open": "True",
+        "p_c_list": [
+            {
+                "path": null,
+                "command": null
+            }
+        ]
+    },
+    "task_open": {
+        "is_open": "False",
+        "task_list": [
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\hoge\\hogehoge.exe",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\hoge2\\hogehoge2.exe"
+        ]
+    }
+}
