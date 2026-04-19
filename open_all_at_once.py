@@ -20,25 +20,26 @@ def load_json(file_path):
 
 def web_open(u_data):
     """urlをまとめて開く"""
-    if(u_data["is_open"] == "False"):
-        return
-    
     b_path = u_data["browser"]
     if not b_path is None:
         browser = webbrowser.get(f'"{b_path}" %s')
+    else:
+        browser = webbrowser.get()
 
-    
     url_list = u_data["url_list"]
+    if url_list is None:
+        return
+
     for url in url_list:
         browser.open(url)
 
     return 0
 
 def cmd_open(c_data):
-    if(c_data["is_open"] == "False"):
-        return
-
     p_c_list = c_data["p_c_list"]
+    if p_c_list is None:
+        return
+    
     for p_c in p_c_list:
         path = p_c.get("path")
         command = p_c.get("command")
@@ -55,10 +56,10 @@ def cmd_open(c_data):
 
 def task_open(t_data):
     """タスクをまとめて開く"""
-    if(t_data["is_open"] == "False"):
+    task_list = t_data["task_list"]
+    if task_list is None:
         return
 
-    task_list = t_data["task_list"]
     for task in task_list:
         try:
             subprocess.Popen(task, shell=True) # taskをまとめて開く
