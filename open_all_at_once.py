@@ -2,6 +2,7 @@ import subprocess
 import webbrowser
 import json
 import os
+import sys
 
 def load_json(file_path):
     if not os.path.exists(file_path):
@@ -68,7 +69,7 @@ def task_open(t_data):
     return 0
 
 if __name__ == '__main__':
-    file_path = "setting.json"  # JSONファイル名
+    file_path = f"{sys.argv[1]}.json"  # JSONファイル名
     data = load_json(file_path)
 
     if data:
