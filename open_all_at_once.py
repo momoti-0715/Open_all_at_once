@@ -45,11 +45,11 @@ def cmd_open(c_data):
         command = p_c.get("command")
         if not path is None:
             if not command is None:
-                subprocess.Popen(['start','/d', path, command], shell=True)
+                subprocess.Popen(['start','/d', path,'cmd','/k', command], shell=True)
             else:
                 subprocess.Popen(['start','/d', path], shell=True)
         elif not command is None:
-            subprocess.Popen(['start', command], shell=True)
+            subprocess.Popen(['start','cmd','/k', command], shell=True)
         else:
             subprocess.Popen(['start'], shell=True)
 
@@ -70,7 +70,7 @@ def task_open(t_data):
     return 0
 
 if __name__ == '__main__':
-    file_path = f"./setting/{sys.argv[1]}.json"  # JSONファイル名
+    file_path = f"../Setting/{sys.argv[1]}.json"  # JSONファイル名
     data = load_json(file_path)
 
     if data:
