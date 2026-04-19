@@ -46,7 +46,8 @@ def cmd_open(c_data):
         if not path is None:
             if not command is None:
                 subprocess.Popen(['start','/d', path, command], shell=True)
-            subprocess.Popen(['start','/d', path], shell=True)
+            else:
+                subprocess.Popen(['start','/d', path], shell=True)
         elif not command is None:
             subprocess.Popen(['start', command], shell=True)
         else:
