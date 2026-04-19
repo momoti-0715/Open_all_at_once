@@ -25,7 +25,6 @@ def web_open(u_data):
     
     b_path = u_data["browser"]
     if not b_path is None:
-        print(b_path)
         browser = webbrowser.get(f'"{b_path}" %s')
 
     
@@ -69,7 +68,7 @@ def task_open(t_data):
     return 0
 
 if __name__ == '__main__':
-    file_path = f"{sys.argv[1]}.json"  # JSONファイル名
+    file_path = f"./setting/{sys.argv[1]}.json"  # JSONファイル名
     data = load_json(file_path)
 
     if data:
