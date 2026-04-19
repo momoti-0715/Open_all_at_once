@@ -1,7 +1,9 @@
 exeファイルを実行すると下で設定したものがまとめて開きます
 (windowsでの動作を想定)
 
-open_all_at_once.exeとsetting.jsonは同じディレクトリ内に格納してください
+Shortcutフォルダ内のexeファイルと、Settingフォルダ内のjsonは名前で連動しています
+実行したい設定のファイル名と同じ名前のshortcutフォルダ内のexeファイルを実行すると、実行されます
+
 パスは全て実行ファイルの絶対パスで記述(バックスラッシュはエスケープ処理してください)
 
 ※コマンド実行は自己責任で
@@ -12,7 +14,6 @@ open_all_at_once.exeとsetting.jsonは同じディレクトリ内に格納して
 {
     urlを開く
     "web_open": {
-        "is_open": "False", 使う場合はTureにする
         "browser": ブラウザを指定する場合はパスを記載(nullの場合はデフォルトのブラウザ),
         "url_list": [
             url1,
@@ -22,8 +23,7 @@ open_all_at_once.exeとsetting.jsonは同じディレクトリ内に格納して
     },
     コマンドプロンプトを開く
     "cmd_open": {
-        "is_open": "False",
-        "p_c_list":[ "開きたい数だけ{}で追加する"
+	"p_c_list":[ "開きたい数だけ{}で追加する"
             {
                 "path": カレントディレクトリのパス(指定しない場合はnull),
                 "command": 事前にコマンドを使用する場合は記載(使用しない場合はnull) パイプは使用不可
@@ -31,12 +31,12 @@ open_all_at_once.exeとsetting.jsonは同じディレクトリ内に格納して
             {
                 ...(さらに開きたい場合は↑に従って記述する)
             }
+		開かない場合は{}のみで
         ]
         
     },
     タスクを開く
     "task_open": {
-        "is_open": "False",
         "task_list": [
             タスクのパス1,
             タスクのパス2,
