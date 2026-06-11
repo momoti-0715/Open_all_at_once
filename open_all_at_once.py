@@ -43,20 +43,13 @@ def cmd_open(c_data):
     for p_c in p_c_list:
         path = p_c.get("path")
         command = p_c.get("command")
-        close = p_c.get("close")
         if not path is None:
             if not command is None:
-                if close:
-                    subprocess.Popen(['start','/d', path,'cmd','/c', command], shell=True)
-                else:
-                    subprocess.Popen(['start','/d', path,'cmd','/k', command], shell=True)
+                subprocess.Popen(['start','/d', path,'cmd','/k', command], shell=True)
             else:
                 subprocess.Popen(['start','/d', path], shell=True)
         elif not command is None:
-            if close:
-                subprocess.Popen(['start','cmd','/c', command], shell=True)
-            else:
-                subprocess.Popen(['start','cmd','/k', command], shell=True)
+            subprocess.Popen(['start','cmd','/k', command], shell=True)
         else:
             subprocess.Popen(['start'], shell=True)
 
