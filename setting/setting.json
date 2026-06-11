@@ -9,7 +9,8 @@
         "p_c_list": [
             {
                 "path": null,
-                "command": "ls"
+                "command": "dir",
+                "close": true
             }
         ]
     },
